@@ -1,0 +1,15 @@
+RewriteEngine on
+
+Options +FollowSymLinks
+
+RewriteCond %{HTTP_HOST} ^www\.clasesdecantomania\.tk$ [NC]
+
+RewriteRule ^(.*)$ http://clasesdecantomania.tk/$1 [R=301,L]
+
+<FilesMatch "\.(ico|jpg|jpeg|png|gif)$">
+
+Header set Cache-Control "max-age=2592000, public"
+
+</FilesMatch>
+
+ErrorDocument 404 /errores/clasesdecantomania.tk
